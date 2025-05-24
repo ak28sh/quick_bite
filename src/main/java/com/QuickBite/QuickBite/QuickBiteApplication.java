@@ -5,6 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 @SpringBootApplication
 //@ComponentScan("com.QuickBite.QuickBite.service")
@@ -18,7 +19,7 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 //@ComponentScan("com.QuickBite.QuickBite.Exception")
 
 
-
+@EnableTransactionManagement
 public class QuickBiteApplication {
 
 	public static void main(String[] args) {

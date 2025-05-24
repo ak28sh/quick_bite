@@ -28,6 +28,9 @@ public class User {
     private String password;
     private USER_ROLE role = USER_ROLE.ROLE_CUSTOMER;
 
+    @OneToOne(cascade = CascadeType.ALL, mappedBy = "customer", orphanRemoval = true)
+    private Cart cart;
+
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "customer")
     @JsonIgnore
     private List<Order> orders = new ArrayList<>();

@@ -6,6 +6,7 @@ import com.QuickBite.QuickBite.model.User;
 import com.QuickBite.QuickBite.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
 public class UserServiceImplementation implements UserService{
@@ -41,5 +42,19 @@ public class UserServiceImplementation implements UserService{
             throw new UserException("User Not found");
         }
         return user;
+    }
+
+
+    @Override
+    public  void deleteUserByEmail(String email) throws UserException {
+
+//        Check if user is present
+        User user = userRepository.findByEmail(email);
+
+        if (user == null) {
+            throw new UserException("User Not found");
+        }
+
+        userRepository.deleteByEmail(email);
     }
 }
