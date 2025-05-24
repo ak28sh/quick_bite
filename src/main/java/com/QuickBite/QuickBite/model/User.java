@@ -1,5 +1,6 @@
 package com.QuickBite.QuickBite.model;
 
+
 import com.QuickBite.QuickBite.dto.RestaurantDto;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
